@@ -65,7 +65,33 @@ make start_arta
 ```
 docker exec -it arta_c bash
 ```
+  Source the workspace after inside the container
+```
+source /opt/ros/kinetic/setup.bash; source /ros_ws/devel/setup.bash
+```
+  Exit the Docker container
+```
+exit
+```
 4.5. Stop the Docker container
 ```
 make stop
 ```
+5.1. Joystick control
+
+5.1.1. Joystick direct control
+```
+make arta_control_joy_direct
+```
+5.1.2. Joystick control with object advoidance [To have effect, require step x and x]
+```
+make arta_control_joy_direct
+```
+5.2. Create and save a map
+```
+make arta_create_map
+
+make arta_save_map
+```
+5.3.1. Localisation with AMCL (without a map, solely using Odom)
+
