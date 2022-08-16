@@ -24,7 +24,7 @@ This is the usage for using Docker within Ubuntu 20.04/18.04/16.04
 
     make default
   
-  3.1. If Host is using 18.04 , update the rules with following command 
+3.1. If Host is using 18.04 , update the rules with following command 
   
     sudo vim /etc/udev/rules.d/96-hokuyo.rules
     
