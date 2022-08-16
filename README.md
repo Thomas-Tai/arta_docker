@@ -111,10 +111,10 @@ make arta_assi_nav
 ```
 6.2. Send goal through RVIZ
 
-  Set the tool properties of 2D Nav Goal > Topic to /arta_navigation/move_base_simple/goal
+Set the tool properties of 2D Nav Goal > Topic to /arta_navigation/move_base_simple/goal
   
 ---------------------------------------------------
-7. Original resource from https://github.com/ImperialCollegeLondon/arta
+Original resource from https://github.com/ImperialCollegeLondon/arta
 
 # ARTA
 
