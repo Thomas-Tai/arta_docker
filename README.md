@@ -6,7 +6,7 @@ This is the usage for using Docker within Ubuntu 20.04/18.04/16.04
 
 0. Install docker engine from official website
 '''
-  https://docs.docker.com/engine/install/ubuntu/
+https://docs.docker.com/engine/install/ubuntu/
 '''
 1. Create a folder (ie. ~/ARTADockerSetup) 
 
