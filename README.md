@@ -8,6 +8,7 @@ This is the usage for using Docker within Ubuntu 20.04/18.04/16.04
 ```
 https://docs.docker.com/engine/install/ubuntu/
 ```
+Install ROS & sudo apt-get install ros-${ROS_DISTRO}-urg-node
 1. Create a folder (ie. ~/ARTADockerSetup) 
 ```
 mkdir ~/ARTADockerSetup
