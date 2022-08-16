@@ -113,9 +113,8 @@ make arta_assi_nav
 
   Set the tool properties of 2D Nav Goal > Topic to /arta_navigation/move_base_simple/goal
   
-7. Original resource from https://github.com/ImperialCollegeLondon/arta
-
 ---------------------------------------------------
+7. Original resource from https://github.com/ImperialCollegeLondon/arta
 
 # ARTA
 
