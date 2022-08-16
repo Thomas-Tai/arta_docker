@@ -57,7 +57,15 @@ make start_arta_sim
 ```
 make start_arta
 ```  
-4.3. Access current container [received root in default when using Docker container]
+4.3. Control ARTA with keyboard input
+```
+make start_arta
+```  
+4.4. Access current container [received root in default when using Docker container]
 ```
 docker exec -it arta_c bash
+```
+4.5. Stop the Docker container
+```
+make stop
 ```
