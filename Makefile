@@ -92,5 +92,21 @@ arta_control_joy_direct:		## enable joy control, with direct control
 arta_kepboard:			## enable keyboard input to control the arta
 	@docker exec -it arta_c bash -c "source /opt/ros/kinetic/setup.bash; source /ros_ws/devel/setup.bash; rosrun msc_social_navigation teleop_twist_keyboard.py"
 
+arta_create_map:
+	@docker exec -it arta_c bash -c "source /opt/ros/kinetic/setup.bash; source /ros_ws/devel/setup.bash; roslaunch arta_navigation arta_localisation.launch slam_method:=gmapping"
+
+arta_save_map:
+	@docker exec -it arta_c bash -c "source /opt/ros/kinetic/setup.bash; source /ros_ws/devel/setup.bash; rosrun map_server map_saver -f test map:=/ros_ws/map"
+
+arta_odom_without_map:
+	@docker exec -it arta_c bash -c "source /opt/ros/kinetic/setup.bash; source /ros_ws/devel/setup.bash; roslaunch arta_navigation arta_localisation.launch"
+arta_odom_with_map:
+	@docker exec -it arta_c bash -c "source /opt/ros/kinetic/setup.bash; source /ros_ws/devel/setup.bash; roslaunch arta_navigation arta_localisation.launch slam_method:=none loc_method:=amcl"
+arta_odom_global_initial:
+	@docker exec -it arta_c bash -c "source /opt/ros/kinetic/setup.bash; source /ros_ws/devel/setup.bash; rosservice call /arta_navigation/global_localization "{}""
+
+arta_assi_nav:
+	@docker exec -it arta_c bash -c "source /opt/ros/kinetic/setup.bash; source /ros_ws/devel/setup.bash; roslaunch arta_navigation arta_navigation.launch obs_avoid:=true autonomous:=false"
+
 stop:				## Stop Docker container
 	@docker stop arta_c >> /dev/null
