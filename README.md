@@ -25,29 +25,29 @@ This is the usage for using Docker within Ubuntu 20.04/18.04/16.04
     make default
 ```  
 3.1. If Host is using 18.04 , update the rules with following command 
-  
+```  
     sudo vim /etc/udev/rules.d/96-hokuyo.rules
-    
+```    
   Replace from
-    
+```    
     KERNEL=="ttyACM[0-9]*", ACTION=="add", ATTRS{idVendor}=="15d1", MODE="0666", GROUP="dialout", PROGRAM="/opt/ros/noetic/env.sh rosrun urg_node getID %N q", SYMLINK+="hokuyo_%c"
-    
+```    
   To
-    
+```    
     KERNEL=="ttyACM[0-9]*", ACTION=="add", ATTRS{idVendor}=="15d1", MODE="0666", GROUP="dialout", PROGRAM="/opt/ros/melodic/env.sh rosrun urg_node getID %N q", SYMLINK+="hokuyo_%c"
-    
+```    
   3.2. If Host is using 16.04, update the rules with following command 
-  
+```  
     sudo vim /etc/udev/rules.d/96-hokuyo.rules
-        
+```        
   Replace from
-    
+```    
     KERNEL=="ttyACM[0-9]*", ACTION=="add", ATTRS{idVendor}=="15d1", MODE="0666", GROUP="dialout", PROGRAM="/opt/ros/noetic/env.sh rosrun urg_node getID %N q", SYMLINK+="hokuyo_%c"
-    
+```    
   To
-    
+```    
     SUBSYSTEMS=="usb", KERNEL=="ttyACM[0-9]*", ACTION=="add", ATTRS{idVendor}=="15d1", ATTRS{idProduct}=="0000", MODE="666", PROGRAM="/opt/ros/kinetic/env.sh rosrun urg_node getID %N q", SYMLINK+="hokuyo_%c", GROUP="dialout"
-
+```
   
 4.1. Run ARTA ( Simulation )
 ```
