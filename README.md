@@ -83,7 +83,7 @@ make stop
 ```
 make arta_control_joy_direct
 ```
-5.1.2. Joystick control with object advoidance [To have effect, require step x and x]
+5.1.2. Joystick control with object advoidance [To have effect, require step 5.3 and 6.1]
 ```
 make arta_control_joy_direct
 ```
@@ -94,4 +94,20 @@ make arta_create_map
 make arta_save_map
 ```
 5.3.1. Localisation with AMCL (without a map, solely using Odom)
-
+```
+make arta_odom_without_map
+```
+5.3.2.1. Localisation with AMCL with map
+```
+make arta_odom_with_map
+```
+5.3.2.2. Localise with global initial
+```
+make arta_odom_global_initial
+```
+6.1. Assistive Navigation
+```
+make arta_assi_nav
+```
+6.2. Send goal through RVIZ
+  Set the tool properties of 2D Nav Goal > Topic to /arta_navigation/move_base_simple/goal
