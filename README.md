@@ -6,24 +6,24 @@ This is the usage for using Docker within Ubuntu 20.04/18.04/16.04
 
 0. Install docker engine from official website
 ```
-https://docs.docker.com/engine/install/ubuntu/
+    https://docs.docker.com/engine/install/ubuntu/
 ```
 1. Create a folder (ie. ~/ARTADockerSetup) 
 ```
     mkdir ~/ARTADockerSetup
 ```
 2. Cd to that folder & download Dockerfile and Makefile into the folder
-
+```
     cd ~/ARTADockerSetup
   
     wget --no-check-certificate --content-disposition https://github.com/Thomas-Tai/arta_docker/raw/main/Dockerfile
   
     wget --no-check-certificate --content-disposition https://github.com/Thomas-Tai/arta_docker/raw/main/Makefile
-  
+```
 3. Create the Docker image and environment
-
+```
     make default
-  
+```  
 3.1. If Host is using 18.04 , update the rules with following command 
   
     sudo vim /etc/udev/rules.d/96-hokuyo.rules
@@ -50,13 +50,14 @@ https://docs.docker.com/engine/install/ubuntu/
 
   
 4.1. Run ARTA ( Simulation )
-
+```
     make start_arta_sim
-
+```
 4.2. Run ARTA ( Real world )
-
+```
     make start_arta
-  
+```  
 4.3. Access current container [received root in default when using Docker container]
-
+```
     docker exec -it arta_c bash
+```
