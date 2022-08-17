@@ -129,7 +129,7 @@ Rodrigo Chacon Quesada, Cédric Goubard, Sebastian Aegidius
 ### Steps to due with serial connection issue when components are not found:
 
 This is the procedure I followed to make the udev rules for the SickLidar work properly with the new laptops:
-
+```
 $ ls /dev/
 •	No sicklms device shown
 $ lsusb
@@ -173,7 +173,7 @@ A Timeout Occurred! 2 tries remaining
 Try following the same procedure but with the second [Bus]/[Device] listed after $ lsusb for the USB-Serial converter.
 
 Note: After the components showed with $ ls /dev/ , may need to modify the ROS package to include the components
-
+```
 
 ---------------------------------------------------
 Original resource from https://github.com/ImperialCollegeLondon/arta
