@@ -63,7 +63,7 @@ make start_arta
 ```  
 4.3. Control ARTA with keyboard input
 ```
-make start_arta
+make arta_kepboard
 ```  
 4.4. Access current container [received root in default when using Docker container]
 ```
@@ -89,7 +89,7 @@ make arta_control_joy_direct
 ```
 5.1.2. Joystick control with object advoidance [To have effect, require step 5.3 and 6.1]
 ```
-make arta_control_joy_direct
+make arta_control_joy
 ```
 5.2. Create and save a map
 ```
