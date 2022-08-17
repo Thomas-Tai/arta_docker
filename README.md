@@ -118,13 +118,13 @@ make arta_assi_nav
 Set the tool properties of 2D Nav Goal > Topic to /arta_navigation/move_base_simple/goal
 
 Credit:
-
+```
 Author: Chun Iao Tai
 
 This docker file is available with the help from
 
 Rodrigo Chacon Quesada, Cédric Goubard, Sebastian Aegidius  
-  
+```  
 ---------------------------------------------------
 Original resource from https://github.com/ImperialCollegeLondon/arta
 
