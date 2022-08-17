@@ -10,7 +10,7 @@ https://docs.docker.com/engine/install/ubuntu/
 ```
 0.1. Using ARTA in real world
 
-Install ROS & sudo apt-get install ros-${ROS_DISTRO}-urg-node
+In Install ROS & sudo apt-get install ros-${ROS_DISTRO}-urg-node
 
 1. Create a folder (ie. ~/ARTADockerSetup) 
 ```
