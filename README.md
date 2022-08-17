@@ -126,6 +126,56 @@ This docker file is available with the help from
 Rodrigo Chacon Quesada, Cédric Goubard, Sebastian Aegidius  
 ```  
 ---------------------------------------------------
+### Steps to due with serial connection issue when components are not found:
+
+This is the procedure I followed to make the udev rules for the SickLidar work properly with the new laptops:
+
+$ ls /dev/
+•	No sicklms device shown
+$ lsusb
+
+        Bus 001 Device 011: ID 0403:6001 Future Technology Devices International, Ltd FT232 USB-Serial (UART) IC
+        Bus 001 Device 009: ID 0403:6001 Future Technology Devices International, Ltd FT232 USB-Serial (UART) IC
+
+$ udevadm info -q all -n /dev/bus/usb/[Bus]/[Device]
+
+•	Example: $ udevadm info -q all -n /dev/bus/usb/001/011
+•	Find E: DEVPATH=/devices/blablabla/blablabla/...
+
+$ udevadm info -a -p [DEVPATH]
+
+•	Example: $ udevadm info -a -p /devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1.1/1-1.1.2
+•	Find ATTR{serial}="XXXXXXXX"
+•	Example: ATTR{serial}=="FTAJM13B"
+
+$ sudo gedit /etc/udev/rules.d/97-sicklms.rules
+
+•	See if ATTR{serial}=="XXXXXXXX" matches the one written in this file. If it doesn't change it accordingly.
+
+$ sudo udevadm control --reload-rules
+
+$ sudo udevadm trigger
+
+•	Disconnect USB cable and connect again
+
+$ roslaunch arta arta.launch
+
+If you get the following error:
+
+A Timeout Occurred! 2 tries remaining
+A Timeout Occurred! 1 tries remaining
+A Timeout Occurred - SickLIDAR::_sendMessageAndGetReply: Attempted max number of tries w/o success!
+A Timeout Occurred! 2 tries remaining
+A Timeout Occurred! 1 tries remaining
+A Timeout Occurred - SickLIDAR::_sendMessageAndGetReply: Attempted max number of tries w/o success!
+A Timeout Occurred! 2 tries remaining
+
+Try following the same procedure but with the second [Bus]/[Device] listed after $ lsusb for the USB-Serial converter.
+
+Note: After the components showed with $ ls /dev/ , may need to modify the ROS package to include the components
+
+
+---------------------------------------------------
 Original resource from https://github.com/ImperialCollegeLondon/arta
 
 # ARTA
