@@ -108,5 +108,8 @@ arta_odom_global_initial:
 arta_assi_nav:
 	@docker exec -it arta_c bash -c "source /opt/ros/kinetic/setup.bash; source /ros_ws/devel/setup.bash; roslaunch arta_navigation arta_navigation.launch obs_avoid:=true autonomous:=false"
 
+arta_rviz:
+	@docker exec -it arta_c bash -c "source /opt/ros/kinetic/setup.bash; source /ros_ws/devel/setup.bash; rosrun rviz rviz -d /ros_ws/SWCRViz.rviz"
+
 stop:				## Stop Docker container
 	@docker stop arta_c >> /dev/null
