@@ -20,9 +20,9 @@ mkdir ~/ARTADockerSetup
 ```
 cd ~/ARTADockerSetup
   
-wget -O --no-check-certificate --content-disposition https://github.com/Thomas-Tai/arta_docker/raw/main/Dockerfile
+wget --no-check-certificate --content-disposition https://github.com/Thomas-Tai/arta_docker/raw/main/Dockerfile
   
-wget -O --no-check-certificate --content-disposition https://github.com/Thomas-Tai/arta_docker/raw/main/Makefile
+wget --no-check-certificate --content-disposition https://github.com/Thomas-Tai/arta_docker/raw/main/Makefile
 ```
 3. Create the Docker image and environment
 ```
