@@ -17,6 +17,7 @@ default:			## Clone dependencies, build Docker image and catkin workspace
 
 # cannot push some of the files individually to github? PWD meaning?
 .pull:				## Clone dependencies
+	@mkdir -p ${PWD}/ros_ws
 	sudo chmod 757 -R ${PWD}/ros_ws
 	@rm -rf ${PWD}/ros_ws
 	@rm -rf ${PWD}/ros_ws/temp
