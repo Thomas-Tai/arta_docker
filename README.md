@@ -61,6 +61,10 @@ make start_arta_sim
 ```
 make start_arta
 ```  
+4.2.1. Run ARTA ready RVIZ ( Real world )
+```
+make arta_rviz
+``` 
 4.3. Control ARTA with keyboard input
 ```
 make arta_kepboard
