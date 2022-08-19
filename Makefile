@@ -35,7 +35,7 @@ default:			## Clone dependencies, build Docker image and catkin workspace
 	@rm -rf ${PWD}/ros_ws/temp
 	@rm -rf ${PWD}/ros_ws/arta
 	# Install rules on local host, as an backup
-	@mkdir /etc/udev/rules.d/; sudo cp ros_ws/src/arta/udevrules/* /etc/udev/rules.d/; sudo udevadm control --reload-rules && sudo service udev restart && sudo udevadm trigger
+	@mkdir /etc/udev/rules.d/; sudo cp ros_ws/SWC_rules/* /etc/udev/rules.d/; sudo udevadm control --reload-rules && sudo service udev restart && sudo udevadm trigger
 	@sudo chmod 757 -R /etc/udev/
 
 
