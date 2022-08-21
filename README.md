@@ -130,6 +130,56 @@ This docker file is available with the help from
 Rodrigo Chacon Quesada, Cédric Goubard, Sebastian Aegidius  
 ```  
 ---------------------------------------------------
+### Steps for manual install steps of the ARTA in a new Ubuntu 16.04 environment:
+1. Install ROS kinetic according to ROS official website
+```
+http://wiki.ros.org/kinetic/Installation/Ubuntu
+```
+2. Install ARTA depends package manually
+```
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get install -y \
+    ros-kinetic-rtabmap-ros \
+    ros-kinetic-joy \
+    ros-kinetic-joystick-drivers \
+    ros-kinetic-global-planner \
+    ros-kinetic-map-server \
+    ros-kinetic-hector-slam \
+    ros-kinetic-slam-gmapping \
+    ros-kinetic-amcl \
+    ros-kinetic-scan-tools \
+    ros-kinetic-urg-node \
+    ros-kinetic-phidgets-imu \
+    ros-kinetic-imu-complementary-filter \
+    ros-kinetic-twist-mux \
+    ros-kinetic-teleop-twist-joy \
+    ros-kinetic-base-local-planner \
+    ros-kinetic-move-base \
+    ros-kinetic-urg-c \
+    ros-kinetic-laser-proc \
+    python-serial \
+    ros-kinetic-laser-filters \
+    ros-kinetic-teleop-twist-keyboard \
+    git\
+    --no-install-recommends
+```
+3. Create a catkin workspace and clone ARTA package
+```
+mkdir ~/ros_ws
+mkdir ~/ros_ws/temp
+git -C ~/ros_ws/temp clone https://github.com/Thomas-Tai/arta_docker.git
+sudo apt-get install unzip
+unzip ~/ros_ws/temp/arta_docker/arta.zip -d ~/ros_ws	
+rm -rf ~/ros_ws/temp
+cd ~/ros_ws/arta && mv * ../
+rm -rf ~/ros_ws/temp
+rm -rf ~/ros_ws/arta
+```
+4. Install rules on local host
+```
+mkdir /etc/udev/rules.d/; sudo cp ros_ws/SWC_rules/* /etc/udev/rules.d/; sudo udevadm control --reload-rules && sudo service udev restart && sudo udevadm trigger
+```
+5. All is done and welcome to use ARTA!
+---------------------------------------------------
 ### Steps to due with serial connection issue when components are not found:
 
 This is the procedure I followed to make the udev rules for the SickLidar work properly with the new laptops:
