@@ -180,6 +180,16 @@ mkdir /etc/udev/rules.d/; sudo cp ros_ws/SWC_rules/* /etc/udev/rules.d/; sudo ud
 ```
 5. All is done and welcome to use ARTA!
 ---------------------------------------------------
+### Steps to due with device path not found (sicklms):
+1. Plug the ARTA usb cable to laptop
+2. reload rules on local host
+```
+sudo udevadm control --reload-rules && sudo service udev restart && sudo udevadm trigger
+```
+3. Replug only the two hokuyo lidar usb cables at the back of the wheelchair
+4. Check at cd /dev with ls to see whther all three lidar sensors are listed
+5. If not, check the following guide to check the serial number for sicklms
+---------------------------------------------------
 ### Steps to due with serial connection issue when components are not found:
 
 This is the procedure I followed to make the udev rules for the SickLidar work properly with the new laptops:
