@@ -1,0 +1,7 @@
+# request
+bool request
+---
+#response
+
+float32[] allreading
+float32[] sections12

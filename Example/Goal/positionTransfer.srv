@@ -1,0 +1,17 @@
+# request
+bool request
+---
+#response
+
+float64 timestamp
+
+geometry_msgs/Point position
+
+geometry_msgs/Quaternion orientation
+
+float32[] odomVelocityX_Y
+float32[] LocalVelocityX_Y
+
+#string response
+
+#float64 x
