@@ -180,7 +180,59 @@ mkdir /etc/udev/rules.d/; sudo cp ros_ws/SWC_rules/* /etc/udev/rules.d/; sudo ud
 ```
 5. All is done and welcome to use ARTA!
 ---------------------------------------------------
-### Steps for using cmd_vel:
+### Steps for using the ARTA package(required to use this source from this github):
+1.1. Launch the ARTA base system
+```
+roslaunch arta arta.launch
+```
+1.2. Launch the ARTA base system in simulation
+```
+roslaunch arta arta.launch simulation:=true
+```
+2.1. Issuing direct manual control by joystick
+```
+roslaunch arta_control arta_control.launch direct_control:=true
+```
+2.2. Issuing direct manual control by keyboart
+```
+rosrun msc_social_navigation teleop_twist_keyboard.py
+```
+2.3. Issuing control with object avoidance by joystick (Require Localisation(Step 4.2) and Navigation module(Step5))
+```
+roslaunch arta_control arta_control.launch
+```
+3. Creat a map for current environment
+```
+roslaunch arta_navigation arta_localisation.launch slam_method:=gmapping
+```
+3.1. Save the map (map), move the map to src\localisation\maps, change map path at src\arta_navigation\launch\arta_localisation.launch
+```
+rosrun map_server map_saver -f NameOfMap map:=/arta_navigation/map
+```
+3.2. Save the map (hector map), move the map to src\localisation\maps, change map path at src\arta_navigation\launch\arta_localisation.launch
+```
+rosrun map_server map_saver -f NameOfMap map:=/arta_navigation/hector_map
+```
+4.1. Localisation without a map (Only use Odom)
+```
+roslaunch arta_navigation arta_localisation.launch
+```
+4.2. Localisation with AMCL
+```
+roslaunch arta_navigation arta_localisation.launch slam_method:=none loc_method:=amcl
+```
+4.2.1. localise with global initial
+```
+rosservice call /arta_navigation/global_localization "{}"
+```
+5. Assistive Navigation (SLAM with goal in RVIZ or object avoidance)
+```
+roslaunch arta_navigation arta_navigation.launch obs_avoid:=true autonomous:=false
+```
+5.1. Send goal from RVIZ
+```
+Set the tool properties of 2D Nav Goal > Topic to /arta_navigation/move_base_simple/goal
+```
 ---------------------------------------------------
 ### Steps to due with device path not found (sicklms):
 1. Plug the ARTA usb cable to laptop
