@@ -1,4 +1,4 @@
-# arta_docker
+# ARTA_docker
 
 This is the usage for using Docker within Ubuntu 20.04/18.04/16.04
 
@@ -179,6 +179,8 @@ rm -rf ~/ros_ws/arta
 mkdir /etc/udev/rules.d/; sudo cp ros_ws/SWC_rules/* /etc/udev/rules.d/; sudo udevadm control --reload-rules && sudo service udev restart && sudo udevadm trigger
 ```
 5. All is done and welcome to use ARTA!
+---------------------------------------------------
+### Steps for using cmd_vel:
 ---------------------------------------------------
 ### Steps to due with device path not found (sicklms):
 1. Plug the ARTA usb cable to laptop
