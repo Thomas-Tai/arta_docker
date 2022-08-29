@@ -2,7 +2,9 @@
 
 This is the usage for using Docker within Ubuntu 20.04/18.04/16.04
 
-## Steps
+## Install
+
+### Steps for using ARTA's docker container
 
 0. Install docker engine from official website
 ```
@@ -180,6 +182,7 @@ mkdir /etc/udev/rules.d/; sudo cp ros_ws/SWC_rules/* /etc/udev/rules.d/; sudo ud
 ```
 5. All is done and welcome to use ARTA!
 ---------------------------------------------------
+## Run ARTA after manual install (without docker)
 ### Steps for using the ARTA package(required to use this source from this github):
 1.1. Launch the ARTA base system
 ```
@@ -234,6 +237,7 @@ roslaunch arta_navigation arta_navigation.launch obs_avoid:=true autonomous:=fal
 Set the tool properties of 2D Nav Goal > Topic to /arta_navigation/move_base_simple/goal
 ```
 ---------------------------------------------------
+## Known issue
 ### Steps to due with device path not found (sicklms):
 1. Plug the ARTA usb cable to laptop
 2. reload rules on local host
